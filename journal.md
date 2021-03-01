@@ -29,3 +29,27 @@ Attempting a second print.  The z offset value stuck (still -2.00), so hopefully
 As expected th X crashed, but after that printing went well.  I dialed the z offest to -2.01 because the first layer was a bit off but now it seems good.
 
 
+## 03012021
+
+Using the sample gcode from the included sdcard I'm experimenting with using the initialization provided by the samples instead of the gcode from PrusaSlicer.
+
+Here's what I settled on:
+
+```
+G90
+M82
+M106 S0
+M140 S50
+M190 S50
+M104 S195 T0
+M109 S195 T0
+M104 S150 ; set extruder temp for auto bed leveling
+M140 S[first_layer_bed_temperature] ; set bed temp
+M190 S[first_layer_bed_temperature] ; wait for bed temp
+G28 ; home all axes
+G92 E0
+```
+
+That seemed to fix the crash, but for some reason didn't turn the hot-end up to target temp.
+
+
