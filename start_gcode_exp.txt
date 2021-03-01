@@ -1,0 +1,43 @@
+G90
+M82
+M106 S0
+M140 S50
+M190 S50
+M104 S195 T0
+M109 S195 T0
+M104 S150 ; set extruder temp for auto bed leveling
+M140 S[first_layer_bed_temperature] ; set bed temp
+M190 S[first_layer_bed_temperature] ; wait for bed temp
+G28 ; home all axes
+G92 E0
+
+
+
+G1 E-10.0000 F4800
+G1 Z0.335 F1002
+; process Process1
+; layer 1, Z = 0.135
+T0
+
+
+G90 ; use absolute coordinates
+M82
+
+
+
+M104 S150 ; set extruder temp for auto bed leveling
+M140 S[first_layer_bed_temperature] ; set bed temp
+M190 S[first_layer_bed_temperature] ; wait for bed temp
+G28 ; home all
+G29 ; auto bed levelling
+G1 Z50 F240
+G1 X2 Y10 F3000
+M104 S[first_layer_temperature] ; set extruder temp
+M109 S[first_layer_temperature] ; wait for extruder temp
+G1 Z0.28 F240
+G92 E0
+G1 Y190 E15 F1500 ; intro line
+G1 X2.3 F5000
+G92 E0
+G1 Y10 E15 F1200 ; intro line
+G92 E0

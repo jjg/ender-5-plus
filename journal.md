@@ -24,4 +24,8 @@ Well it's sort of working.  X still crashes when the machine is getting ready to
 
 I'm not sure what to take-away from this.  Clearly I need to do something to make it stop crashing the X axis when it initializes, and I need to do something to make the Z compensation "stick".  
 
+Attempting a second print.  The z offset value stuck (still -2.00), so hopefully that won't cause problems but I fully expect the x axis to crash during initialization.  
+
+As expected th X crashed, but after that printing went well.  I dialed the z offest to -2.01 because the first layer was a bit off but now it seems good.
+
 
