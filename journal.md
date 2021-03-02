@@ -52,4 +52,25 @@ G92 E0
 
 That seemed to fix the crash, but for some reason didn't turn the hot-end up to target temp.
 
+Looking back it's obvious that the temp code is missing from the above.  Re-worked the init code and added comments as such:
+
+```
+G90 ; use absolute coordinates
+M82 ; set extruder to absolute mode
+M106 S0 ; fan on
+M140 S[first_layer_bed_temperature] ; set bed temp
+M190 S[first_layer_bed_temperature] ; wait for bed temp
+G28 ; home all
+G29 ; auto bed levelling
+M104 S[first_layer_temperature] ; set extruder temp
+M109 S[first_layer_temperature] ; wait for extruder temp
+G92 E0 ; Set position of extruder?
+```
+
+If this works I might try removing the offset I put in the "bed shape" section of the PrusaSlicer config.
+
+When the print started I modified the z offset to -2.03; we'll see how well that sticks.
+
+That went well.  Trying again with two parts, and no adjustment before pressing print.
+
 

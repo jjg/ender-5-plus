@@ -1,10 +1,11 @@
-G90
-M82
-M106 S0
-M140 S50
-M190 S50
-M104 S195 T0
-M109 S195 T0
+G90 ; use absolute coordinates
+M82 ; set extruder to absolute mode
+M106 S0 ; fan on
+M140 S50 ; set bed temp
+M190 S50 ; wait for bed temp to reach target temp
+M104 S195 T0 ; set extruder temp
+M109 S195 T0 ; set extruder temp and wait
+
 M104 S150 ; set extruder temp for auto bed leveling
 M140 S[first_layer_bed_temperature] ; set bed temp
 M190 S[first_layer_bed_temperature] ; wait for bed temp

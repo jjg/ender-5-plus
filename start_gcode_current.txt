@@ -1,0 +1,12 @@
+G90 ; use absolute coordinates
+M82 ; set extruder to absolute mode
+M106 S0 ; fan on
+M140 S[first_layer_bed_temperature] ; set bed temp
+M190 S[first_layer_bed_temperature] ; wait for bed temp
+G28 ; home all
+G29 ; auto bed levelling
+M104 S[first_layer_temperature] ; set extruder temp
+M109 S[first_layer_temperature] ; wait for extruder temp
+G92 E0 ; Set position of extruder?
+
+
