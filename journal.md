@@ -69,8 +69,24 @@ G92 E0 ; Set position of extruder?
 
 If this works I might try removing the offset I put in the "bed shape" section of the PrusaSlicer config.
 
-When the print started I modified the z offset to -2.03; we'll see how well that sticks.
+When the print started I modified the z offset to -2.15; we'll see how well that sticks.
 
 That went well.  Trying again with two parts, and no adjustment before pressing print.
 
 
+## 03022021
+
+That last print curled a bit but managed to stick enough to finish.  Overnight I read a few tips for improving adhesion, including washing the bed with dish soap and then wiping it down with ipa before each print.  To test this I washed the bed this morning and now I'm running the exact same part after wiping down the bed with 99% ipa.
+
+This worked perfectly.  No curling, no moving and the parts practically came off by themselves once the bed cooled-down.
+
+Things to consider adding to the init code:
+
+* Print a "priming line" to get the filament flowing
+* Bring the nozzle up to temp before calibration
+* Review bed centering, x offset to get print to start in the middle as expected.
+
+
+## 03032021
+
+Tried resetting the bed centering to 0,0.  
