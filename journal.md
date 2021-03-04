@@ -89,4 +89,4 @@ Things to consider adding to the init code:
 
 ## 03032021
 
-Tried resetting the bed centering to 0,0.  
+Tried resetting the bed centering to 0,0 and this seems to have worked well.  I still need to test printing to the edges of the envelope, but for now this is good enough.
