@@ -90,3 +90,12 @@ Things to consider adding to the init code:
 ## 03032021
 
 Tried resetting the bed centering to 0,0 and this seems to have worked well.  I still need to test printing to the edges of the envelope, but for now this is good enough.
+
+
+## 03202021
+
+Been awhile and had a number of good prints, but then had a problem with the Silk filament that basicly shattered inside the bowden tube.  I had to pull the couplings to get the thing apart and the filamet was still lodged in there somehow, so I decided to replace it with a "capricorn" tube and we'll see how that goes.
+
+I noticed when I ran a print to test the new setup that the initialization process reverted to the old sequence and crashed the head into the frame and binder clips.  I don't know how long it's been doing this but upon checking the slicer settings it had indeed reverted the init gcode.  This is really frustrating, because it's hard on the printer and also I spent a lot of time fixing this in the first place.  I've also had other problems with PrusaSlicer, notably it crashes when slicing anything of moderate complexity (appears to run out of memory).  Given this and the gcode reversion problem I'll be revisiting alternatives when I setup my new laptop.
+
+
